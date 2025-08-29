@@ -1,11 +1,13 @@
-#devlog #study  #nextjs #app-router
+#devlog #study  #nextjs #react #app-router #fullstack
 
 # Next.js study notes
 
 - 한 입 크기로 잘라먹는 Next.js(v15)
-	- 인프런 강의 듣고 정리
 - 새싹 풀스택 과정
-- *LLM 활용 내용 보충*
+	- 강의 듣고 정리
+	- *LLM 활용 내용 보충*
+
+*...업데이트중...*
 
 ---
 
@@ -15,7 +17,6 @@
 	- app-router 의 `generateStaticParams` : 어떤 종류의 데이터를 받는지 샘플로 만들어둠
 		- 여기에서 리턴하는 객체의 값은 "string"만 가능함
 	- page-router의 `getStaticPath`와 동일한 기능
-- 
 
 ### streaming
 - 큰 데이터를 잘게 쪼개서 연속적으로 보내는 기술
