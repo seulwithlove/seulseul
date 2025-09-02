@@ -113,7 +113,8 @@
 - 동기 실행 -> paint되기 전에 실행됨 : 성능영향 O
 
 ### `useEffect` 
-- paint 이후 실행(비동기)
+- rendering -> mount 이후에 실행
+	- paint 이후 실행(비동기)
 - state 값 그 자체를 관리하는게 X -> 렌더링에 따른 `side effect`를 처리하는데 사용
 	- e.g. data fetch, event listener 등록, DOM 조작
 - life cycle 관리에 사용

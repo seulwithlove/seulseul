@@ -11,14 +11,14 @@
 
 ---
 
-## 내어보기
+# 내어보기
 
 - dynamic page에서 비동기로 값을 가져오는 경우에도 static page를 미리 만들어 둘수 있음
 	- app-router 의 `generateStaticParams` : 어떤 종류의 데이터를 받는지 샘플로 만들어둠
 		- 여기에서 리턴하는 객체의 값은 "string"만 가능함
 	- page-router의 `getStaticPath`와 동일한 기능
 
-### streaming
+## streaming
 - 큰 데이터를 잘게 쪼개서 연속적으로 보내는 기술
 - 모든 데이터를 전달받지 않은 상태에서 화면을 끊김없이 볼수 있음
 	- async - 느리게 렌더링 되는 부분 : 대체 UI(로딩바)를 보여주기
@@ -26,21 +26,21 @@
 	- cf. Static page는 full route cache에 저장됨
 - UX : user experience가 중요함!!
 
-#### Page streaming
+### Page streaming
 - 동일 라우터에 있는 page에 대한 스트리밍의 대체 UI(loading)를 설정하려면 `loading.tsx`생성
 - 주의사항
 	- component에 대해서는 설정X
 	- query string 값의 변화에 대해서는 page이동이 아니기때문에 설정할수 없음
 	- 비동기-dynamic page에 대해서만 적용됨
 
-#### Component streaming
+### Component streaming
 - `Suspense` 활용
 
 
 - Skeleton UI : 뼈대만 보여주는 UI
   
 
-### Server Actions
+## Server Actions
 - 서버에서만 실행할 수 있는 동작을 브라우저에서 실행하는 것
 	- `"use server"` 추가하면 서버액션으로 실행됨
 		- 서버액션을 실행하는 API가 생성되어 브라우저에서 해당 서버액션을 실행하는 작업을 했을때 이 API를 호출하게 됨
@@ -66,6 +66,7 @@
 - hidden input tag에는 `readOnly` attribute tag를 설정해줘야함
 
 - `div` or `form` 태그로 버튼 기능을 만들고 싶으면 -> `useRef`사용!
+
 ## Parallel route & Intercepting route
 - @ : slot
 - (.)*폴더명* : route group 
@@ -74,10 +75,15 @@
 	- modal 페이지로 띄움
 - 특정 페이지를 intercept해서 Modal로 띄우고 배경은 parallel route를 활용해 기존의 페이지를 띄우면 자연스러운 UI를 만들수 있음
 
----
-## 의문갖기
+## ComponentProps
+- 특정 컴포넌트의 prop들을 키로 받아서 그 자체를 사용?
 
-### `RootLayout` 안에 page.tsx를 import해서 넣은 적이 없는데 어떻게 렌더링되지?
+## [[devlog-nextauth|Auth.js]]
+
+---
+# 의문갖기
+
+## `RootLayout` 안에 page.tsx를 import해서 넣은 적이 없는데 어떻게 렌더링되지?
 
 > Next.js App router는 `{children}` 자리에 자동으로 하위 route component(page.tsx)를 끼워넣는다
 ```bash
@@ -97,7 +103,7 @@ app/
     → `app/layout.tsx`의 `{children}` 자리에 넣음
 
 
-### `useSearchParams`는 query string을 비동기로 가져오는데 왜 비동기 코드를 쓰지 않지?
+## `useSearchParams`는 query string을 비동기로 가져오는데 왜 비동기 코드를 쓰지 않지?
 
 > `useSearchParams`는 동기적인 값!
 ```tsx
@@ -116,7 +122,7 @@ export default function Page() {
 	- "dynamically evaluated" 
 		- 빌드 시점에는 알수 없고, 요청(request) 시점에만 알수 있음
 
-#### 그러면 왜 buildtime error가 나서 \<Suspense> 컴포넌트로 감싸줘야하는거지?
+### 그러면 왜 buildtime error가 나서 \<Suspense> 컴포넌트로 감싸줘야하는거지?
 > `useSearchParams`는 reactive state라서 내부적으로 Suspense-ready로 감싸고 있다=> runtime에서 준비될때까지 Suspense fallback을 그려줘야함
 
 - `useSearchParmas`는 Client component!
@@ -124,20 +130,34 @@ export default function Page() {
 	- 값이 준비되기 전에는 pending 상태로 둠(React Suspense 기반 "lazy" 값)
 		- 이 때문에 \<Suspense>로 감싸줘야함
 
-## React 대신에 Next.js를 왜 쓰는걸까?
 
-- 성진님 코멘트 정리 ![[IMG_0407.jpg]]
-	- <span style="background:#fdbfff">면접질문으로 자주 나옴</span>
-		- 해당 회사 서비스 분석해서 어디 페이지를 어떤 렌더링 방식으로 사용하면 좋은지 함께 덧붙여 대답하면 좋은 대답으로 만들수 있음!
+## React 대신에 Next.js를 왜 쓰는걸까?
+> Next.js는 React의 단점인 초기 로딩 속도와 SEO 문제를 해결하고, SSR·SSG·ISR 같은 다양한 렌더링 방식을 제공해서 더 나은 사용자 경험과 SEO 검색노출을 보장한다
+
+### CSR(Client Side Rendering) - React
+- 초기에는 빈 HTML + JS만 내려와서 브라우저가 실행하는데 시간이 필요 : 첫 로딩 속도 느림
+- 크롤러는 JS 실행 전이라 콘텐츠를 읽지 못해서 SEO 불리
+
+### Next.js
+- React의 생태계를 그대로 쓰면서도 라우팅, API Routes 등 풀스택 기능 제공
+- **SSR (Server-Side Rendering)**: 서버에서 완성된 HTML을 내려주기 때문에 초기 속도 빠르고 SEO 친화적
+- **SSG (Static Site Generation)**: 빌드시 HTML 생성 → 속도 매우 빠르고 트래픽에 강함
+- **ISR (Incremental Static Regeneration)**: static 페이지도 일정주기마다 갱신 가능 → 최신성 + 성능 모두 갖춤
+
+
+- *면접질문으로 자주 나옴*
+	- 해당 회사 서비스 분석해서 어디 페이지를 어떤 렌더링 방식으로 사용하면 좋은지 함께 덧붙여 대답하면 좋은 대답으로 만들수 있음!
+
+
 
 ---
 
 ## 참고하기
 
-- {{reference1}}
-- {{reference2}}
+- [Next.js Blog](https://nextjs.org/blog)
+- 
 
 ---
 
 ## 찾아보기
-{{additional-notes}}
+- [ ] GET/POST 기본 개념
