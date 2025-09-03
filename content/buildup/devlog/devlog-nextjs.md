@@ -80,6 +80,24 @@
 
 ## [[devlog-nextauth|Auth.js]]
 
+
+## SessionProvider
+> 리액트의 Context Provider(API) 와 같은 역할
+- 앱의 최상위(`layout.tsx` or `_app.tsx`)에 넣어서 **모든 컴포넌트에서 세션 정보를 쓸수 있게 함**
+	- e.g.`useSession()` 
+- 쿠키에 저장된 session을 읽어와서 리액트 state로 관리
+
+
+### `useSession`
+- 클라이언트 컴포넌트에서 현재 로그인 상태를 가져오는 훅
+- return `{data: session, status}`
+	- `session` : 로그인된 사용자 정보(없으면 null)
+	- `status` : `"loading" | "authenticated" | "unauthenticated"`
+=> 로그인 버튼, 프로필 표시, 로그아웃 버튼 같은 UI에서는 **쿠키를 직접 다루지 않고, 세션 상태만 확인하면 됨**
+
+> `SessionProvider`는 session을 리액트 state로 전역에 제공함, `useSession`은 개별 컴포넌트에서 그 상태(현재 로그인 정보, 사용자 정보)를 읽어올수 있게 함 -> 개발자는 쿠키를 직접 다루지 않고 인증 상태를 관리할수 있게 됨
+
+
 ---
 # 의문갖기
 
@@ -149,13 +167,12 @@ export default function Page() {
 	- 해당 회사 서비스 분석해서 어디 페이지를 어떤 렌더링 방식으로 사용하면 좋은지 함께 덧붙여 대답하면 좋은 대답으로 만들수 있음!
 
 
-
 ---
 
 ## 참고하기
 
 - [Next.js Blog](https://nextjs.org/blog)
-- 
+- [Bootstrap Docs-Colors](https://getbootstrap.com/docs/5.3/customize/color/#colors)
 
 ---
 

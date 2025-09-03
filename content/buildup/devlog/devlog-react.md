@@ -177,7 +177,7 @@ function TitleUpdater(){
 	👉 공부 포인트: 여러 버튼이 있는 Form에서 버튼별 상태 어떻게 다뤄지는지
 
 
-### `contextAPI` ✨✨✨
+### `context API` ✨✨✨
 - 'props drilling(중첩된 props 전달)' 문제를 해결하기 위해 사용
 - component 외부 값에 접근
 - 구성 요소
@@ -278,6 +278,12 @@ function CounterButton(){
 }
 
 ```
+
+## Link vs Button 차이
+- `Link` → href (e.g. `/api/auth/signout`) 주소로 **GET 요청**을 보내는 방식 
+	- 브라우저가 직접 이동
+- `Button` + NextAuth의 `signOut()` → JS 함수 호출을 통해 **API 요청 → 후처리**를 할 수 있음
+	- 예: 로그아웃 후 리다이렉트, 알림 띄우기 등
 
 
 ---

@@ -1,4 +1,4 @@
-#devlog #study  #nextauth #oauth2
+#devlog #study  #nextauth #oauth2 #server 
 
 # Auth.js study notes
 
@@ -54,28 +54,22 @@
 - 쿠키(HttpOnly) : 보안상 안전, 자동으로 요청에 붙음(Auth.js 기본)
 - Local storage : 직접 JS로 접근해야하고 해킹(XSS)에 취약 → 요즘은 안씀
 
-- ref : https://oauth.net/2/
+
+## NextAuth.js
+> - 서버에서 세션을 쿠키 기반으로 관리 
+> - 클라이언트에서 이 세션을 읽어 로그인/로그아웃 상태를 알수 있게 함
+
+
+
 ---
 ## 의문갖기
 
-- {{question1}}
-- {{question2}}
+- 
 
 ---
 
-## 참고하기
+## 참고
 
-- {{reference1}}
-- {{reference2}}
-
----
-
-## 찾아보기
-{{additional-notes}}
-
-## 액션아이템
-
-- [ ] {{action1}}
-- [ ] {{action2}}
-- [ ] {{action3}}
+- https://oauth.net/2/
+- 
 
