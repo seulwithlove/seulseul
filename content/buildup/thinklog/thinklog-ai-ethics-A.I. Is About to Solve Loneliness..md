@@ -1,9 +1,9 @@
-#buildlog #study  #ai-ethics #chatbot #loneliness
+#thinklog #seulseulpubpub  #ai-ethics #chatbot #loneliness #the-new-yorker
 
 > *삼월의 사월* - 프로젝트 1 - 슬슬펍펍
 # AI Ethics Study Note #1 - 외로움과 챗봇
 
-- The New Yorker article - [A.I. Is About to Solve Loneliness. That’s a Problem](https://www.newyorker.com/magazine/2025/07/21/ai-is-about-to-solve-loneliness-thats-a-problem)
+- <The New Yorker\> article - [A.I. Is About to Solve Loneliness. That’s a Problem](https://www.newyorker.com/magazine/2025/07/21/ai-is-about-to-solve-loneliness-thats-a-problem)
 - By [Paul Bloom](https://www.newyorker.com/contributors/paul-bloom)
 - July 14, 2025
 

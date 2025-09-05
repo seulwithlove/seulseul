@@ -1,5 +1,6 @@
-#thinklog #inspia #filterbuble #communication
+#thinklog #seulseulpubpub #inspia #filterbuble #communication
 
+> *삼월의 사월* - 프로젝트 1 - 슬슬펍펍
 # 인스피아 - 진짜로 필터버블이 문제인가?
 - 김스피
 - 2025.2.5 회차
