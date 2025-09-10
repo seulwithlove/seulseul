@@ -4,7 +4,7 @@
 
 - 새싹 풀스택 과정 강의
 - [Auth.js - Docs](https://authjs.dev/getting-started) 
-	- *LLM 활용 내용 보충
+	- *LLM 활용 내용 보충*
 
 ...업데이트중...
 
