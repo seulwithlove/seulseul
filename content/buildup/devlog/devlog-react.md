@@ -60,6 +60,10 @@
 	- `Body.defaultProps = {}`
 - children 으로 받음
  
+## Hook
+- react의 상태 / life cycle을 관리하는 함수
+
+
 ##  `useState`
 - `const [state, setState] = useState(initVal);`
 	- useStae returns a list with state, a function to update the state
