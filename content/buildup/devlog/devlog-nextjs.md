@@ -34,6 +34,8 @@ export const logout = async () => {
 
 ```tsx
 // @/app/sign/google-login-button.tsx
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { login } from "./sign.action";
 
