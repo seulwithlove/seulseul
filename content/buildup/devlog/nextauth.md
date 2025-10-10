@@ -1,6 +1,6 @@
 #devlog #study  #nextauth #oauth2 #server 
 
-# Auth.js study notes
+# Auth.js  📝
 
 - 새싹 풀스택 과정 강의
 - [Auth.js - Docs](https://authjs.dev/getting-started) 
@@ -10,7 +10,7 @@
 
 ---
 
-## 내어보기
+# 내어보기
 
 ## OAuth2
 - 다른 서비스 계정으로 로그인을 허용하는 표준 프로토콜
@@ -62,15 +62,16 @@
 > - 서버에서 세션을 쿠키 기반으로 관리 
 > - 클라이언트에서 이 세션을 읽어 로그인/로그아웃 상태를 알수 있게 함
 
+### validator
 
 ---
-## 의문갖기
+# 의문갖기
 
 - 
 
 ---
 
-## 참고
+# 참고
 
 - https://oauth.net/2/
 - 

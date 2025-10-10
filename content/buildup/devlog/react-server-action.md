@@ -1,6 +1,6 @@
 #devlog #study  #react #nextjs #server-action
 
-# devlog-nextjs-server-action
+# Next.js Server Action  📝
 
 - 새싹 풀스택 과정 강의
 	- 강의 듣고 정리

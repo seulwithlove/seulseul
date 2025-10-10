@@ -1,6 +1,6 @@
 #devlog #study  #nextjs #react #app-router #fullstack
 
-# Next.js study notes
+# Next.js  📝
 
 - 한 입 크기로 잘라먹는 Next.js(v15)
 - 새싹 풀스택 과정
@@ -147,7 +147,7 @@ export default function Page() {
 ## ComponentProps
 - 특정 컴포넌트의 prop들을 키로 받아서 그 자체를 사용?
 
-## [[devlog-nextauth|Auth.js]]
+## [[nextauth|Auth.js]]
 
 
 ## SessionProvider
