@@ -69,11 +69,7 @@
 > JS의 single thread 단점을 보완하는 프레임워크 (렌더링 최적화)
 > - 요소마다 우선순위가 있어서 요청에 따라 작업을 유연하게 처리
 > 	- 화면이 부드럽게 보여지도록 함
-
-- [reference](https://medium.com/stayfolio-tech/react%EA%B0%80-0-016%EC%B4%88%EB%A7%88%EB%8B%A4-%ED%95%98%EB%8A%94-%EC%9D%BC-feat-fiber-1b9c3839675a)
-
----
-
+- [📑 ref-blog : React가 0.016초마다 하는 일 (Feat. Fiber)](https://medium.com/stayfolio-tech/react%EA%B0%80-0-016%EC%B4%88%EB%A7%88%EB%8B%A4-%ED%95%98%EB%8A%94-%EC%9D%BC-feat-fiber-1b9c3839675a)
 
 ## Link vs Button 차이
 - `Link` → href (e.g. `/api/auth/signout`) 주소로 **GET 요청**을 보내는 방식 
