@@ -3,7 +3,7 @@
 Templates/
 templates/
 reference-notes/
-
+img/
 
 # Quartz
 node_modules/
@@ -12,6 +12,7 @@ replit.nix
 tsconfig.tsbuildinfo
 .gitignore
 prof
+
 
 
 # Build outputs
