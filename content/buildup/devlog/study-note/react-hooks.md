@@ -1,4 +1,4 @@
-#devlog #study  #{{tag}} #{{category}}
+#devlog #study  #react #hooks
 # React hooks 📝
 
 - 새싹 풀스택 과정
