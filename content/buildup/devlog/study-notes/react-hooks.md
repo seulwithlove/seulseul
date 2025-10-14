@@ -1,6 +1,6 @@
 ---
-created: <% tp.date.now("YYYY-MM-DD") %>
-modified: <% tp.date.now("YYYY-MM-DD") %>
+created: 2025-10-11T23:14
+updated: 2025-10-14T17:03
 ---
 #devlog #study  #react #hooks
 # React hooks 📝

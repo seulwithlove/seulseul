@@ -1,3 +1,7 @@
+---
+created: 2025-10-12T15:27
+updated: 2025-10-14T17:03
+---
 #thinklog #seulseulpubpub  #ai-ethics #chatbot #loneliness #the-new-yorker
 
 > *삼월의 사월* - 프로젝트 1 - 슬슬펍펍

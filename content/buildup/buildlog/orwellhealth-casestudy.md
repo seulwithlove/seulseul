@@ -1,3 +1,7 @@
+---
+created: 2025-07-24T22:46
+updated: 2025-10-14T17:01
+---
 #buildlog #startup #unsexybusiness #mental-care #casestudy
 # 멘탈케어 스타트업 이야기
 - Orwell Health 대표 홍승주

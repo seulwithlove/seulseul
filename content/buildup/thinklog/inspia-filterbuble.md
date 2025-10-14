@@ -1,3 +1,7 @@
+---
+created: 2025-07-31T21:29
+updated: 2025-10-14T17:03
+---
 #thinklog #seulseulpubpub #inspia #filterbuble #communication
 
 > *삼월의 사월* - 프로젝트 1 - 슬슬펍펍

@@ -40,7 +40,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 				if (fileData.dates.created) {
 					segments.push(
 						<span>
-							작성일:{" "}
+							created:{" "}
 							<DateComponent
 								date={fileData.dates.created}
 								locale={cfg.locale}
@@ -49,18 +49,11 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 					);
 				}
 
-				// Show modification date if available and different from creation
-				if (
-					fileData.dates.modified &&
-					(!fileData.dates.created ||
-						Math.abs(
-							fileData.dates.modified.getTime() -
-								fileData.dates.created.getTime(),
-						) > 60000)
-				) {
+				// Show modification date if available
+				if (fileData.dates.modified) {
 					segments.push(
 						<span>
-							수정일:{" "}
+							updated:{" "}
 							<DateComponent
 								date={fileData.dates.modified}
 								locale={cfg.locale}

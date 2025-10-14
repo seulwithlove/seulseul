@@ -1,6 +1,6 @@
 ---
-created: <% tp.date.now("YYYY-MM-DD") %>
-modified: <% tp.date.now("YYYY-MM-DD") %>
+created: 2025-10-14T16:08
+updated: 2025-10-14T17:02
 ---
 #devlog #project  #nextjs  #react-native #application 
 

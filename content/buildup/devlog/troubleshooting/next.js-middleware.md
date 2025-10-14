@@ -1,3 +1,7 @@
+---
+created: 2025-10-11T17:08
+updated: 2025-10-14T17:03
+---
 #devlog #study  #trouble-shooting #nextjs #middleware #runtime-error
 
 # `Error: URL is malformed`

@@ -1,6 +1,6 @@
 ---
-created: <% tp.date.now("YYYY-MM-DD") %>
-modified: <% tp.date.now("YYYY-MM-DD") %>
+created: 2025-10-10T18:08
+updated: 2025-10-14T17:02
 ---
 #devlog #study  #nextauth #oauth2 #server 
 

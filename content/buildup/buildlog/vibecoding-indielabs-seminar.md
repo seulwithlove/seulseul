@@ -1,3 +1,7 @@
+---
+created: 2025-07-31T22:30
+updated: 2025-10-14T17:02
+---
 #buildlog #seminar #startup #vibe-coding #digital-nomad
 
 # 바이브코딩 - 조승래 대표

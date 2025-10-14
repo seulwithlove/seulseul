@@ -1,3 +1,7 @@
+---
+created: 2025-09-03T17:33
+updated: 2025-10-14T17:03
+---
 #devlog #study  #nextauth #trouble-shooting #backend #sever-action 
 
 # `headers was called outside a request scope`
