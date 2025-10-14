@@ -1,3 +1,7 @@
+---
+created: <% tp.date.now("YYYY-MM-DD") %>
+modified: <% tp.date.now("YYYY-MM-DD") %>
+---
 #devlog #study  #nextjs #react #app-router #fullstack
 
 # Next.js  📝

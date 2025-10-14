@@ -1,3 +1,7 @@
+---
+created: <% tp.date.now("YYYY-MM-DD") %>
+modified: <% tp.date.now("YYYY-MM-DD") %>
+---
 #devlog #study  #project #nextjs #react #application 
 
 # Social Bookmark Application

@@ -2,7 +2,7 @@ import type { JSX } from "preact";
 import readingTime from "reading-time";
 import { i18n } from "../i18n";
 import { classNames } from "../util/lang";
-import { Date } from "./Date";
+import { Date as DateComponent } from "./Date";
 import style from "./styles/contentMeta.scss";
 import type { QuartzComponentConstructor, QuartzComponentProps } from "./types";
 
@@ -17,7 +17,7 @@ interface ContentMetaOptions {
 
 const defaultOptions: ContentMetaOptions = {
 	showReadingTime: true,
-	showModifiedTime: false,
+	showModifiedTime: true,
 	showComma: true,
 };
 
@@ -35,13 +35,39 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 		if (text) {
 			const segments: (string | JSX.Element)[] = [];
 
-			// Display modification time
-			if (options.showModifiedTime && fileData.dates?.modified) {
-				segments.push(
-					<span>
-						Updated: <Date date={fileData.dates.modified} locale={cfg.locale} />
-					</span>,
-				);
+			if (fileData.dates) {
+				// Show creation date if available
+				if (fileData.dates.created) {
+					segments.push(
+						<span>
+							작성일:{" "}
+							<DateComponent
+								date={fileData.dates.created}
+								locale={cfg.locale}
+							/>
+						</span>,
+					);
+				}
+
+				// Show modification date if available and different from creation
+				if (
+					fileData.dates.modified &&
+					(!fileData.dates.created ||
+						Math.abs(
+							fileData.dates.modified.getTime() -
+								fileData.dates.created.getTime(),
+						) > 60000)
+				) {
+					segments.push(
+						<span>
+							수정일:{" "}
+							<DateComponent
+								date={fileData.dates.modified}
+								locale={cfg.locale}
+							/>
+						</span>,
+					);
+				}
 			}
 
 			// Display reading time if enabled
@@ -54,17 +80,6 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 				});
 				segments.push(<span>{displayedTime}</span>);
 			}
-
-			// if (fileData.dates) {
-			// 	// Show creation date if available
-			// 	if (fileData.dates.created) {
-			// 		segments.push(
-			// 			<span>
-			// 				<Date date={fileData.dates.created} locale={cfg.locale} />
-			// 			</span>,
-			// 		);
-			// 	}
-			// }
 
 			return (
 				<p
