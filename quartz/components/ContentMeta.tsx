@@ -36,26 +36,25 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 			const segments: (string | JSX.Element)[] = [];
 
 			if (fileData.dates) {
-				// Show creation date if available
-				if (fileData.dates.created) {
-					segments.push(
-						<span>
-							created:{" "}
-							<DateComponent
-								date={fileData.dates.created}
-								locale={cfg.locale}
-							/>
-						</span>,
-					);
-				}
-
-				// Show modification date if available
+				// Show modification date if available (preferred)
 				if (fileData.dates.modified) {
 					segments.push(
 						<span>
 							updated:{" "}
 							<DateComponent
 								date={fileData.dates.modified}
+								locale={cfg.locale}
+							/>
+						</span>,
+					);
+				}
+				// Show creation date only if modification date is not available
+				else if (fileData.dates.created) {
+					segments.push(
+						<span>
+							created:{" "}
+							<DateComponent
+								date={fileData.dates.created}
 								locale={cfg.locale}
 							/>
 						</span>,

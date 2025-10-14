@@ -58,19 +58,33 @@ export default (() => {
 			<head>
 				<title>{title}</title>
 				<meta charSet="utf-8" />
-				{cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
-					<>
-						<link rel="preconnect" href="https://fonts.googleapis.com" />
-						<link rel="preconnect" href="https://fonts.gstatic.com" />
-						<link rel="stylesheet" href={googleFontHref(cfg.theme)} />
-						{cfg.theme.typography.title && (
-							<link
-								rel="stylesheet"
-								href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)}
-							/>
-						)}
-					</>
-				)}
+				{cfg.theme.cdnCaching &&
+					(cfg.theme.fontOrigin === "googleFonts" ||
+						cfg.theme.fontOrigin === "local") && (
+						<>
+							<link rel="preconnect" href="https://fonts.googleapis.com" />
+							<link rel="preconnect" href="https://fonts.gstatic.com" />
+							{cfg.theme.fontOrigin === "googleFonts" && (
+								<>
+									<link rel="stylesheet" href={googleFontHref(cfg.theme)} />
+									{cfg.theme.typography.title && (
+										<link
+											rel="stylesheet"
+											href={googleFontSubsetHref(cfg.theme, cfg.pageTitle)}
+										/>
+									)}
+								</>
+							)}
+							{cfg.theme.fontOrigin === "local" && (
+								<link
+									rel="stylesheet"
+									as="style"
+									crossOrigin="anonymous"
+									href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+								/>
+							)}
+						</>
+					)}
 				<link
 					rel="preconnect"
 					href="https://cdnjs.cloudflare.com"
