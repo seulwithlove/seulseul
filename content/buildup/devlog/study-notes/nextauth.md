@@ -1,8 +1,8 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-10-14T17:02
+updated: 2025-10-18T14:44
 ---
-#devlog #study  #nextauth #oauth2 #server 
+#devlog #study  #nextauth #oauth2 #server #jwt
 
 # Auth.js  📝
 
@@ -10,7 +10,114 @@ updated: 2025-10-14T17:02
 - [Auth.js - Docs](https://authjs.dev/getting-started) 
 	- *LLM 활용 내용 보충*
 
-...업데이트중...
+---
+# 의문갖기
+
+## 세션 만료 시간을 연장하려면 `access_token`을 매번 새로 발급?
+### 문제 :
+- 로그인상태로 세션 만료 시간을 초과하면 jwt 토큰 관련 에러가 발생
+```typescript
+// middleware.ts
+if (!token) {
+  // 여기로 빠짐 → 로그인 페이지로 강제 이동
+  return NextResponse.redirect(
+    new URL(`/sign?redirectTo=${pathname}`, req.url)
+  );
+}
+```
+- 매 요청마다 `access_token`을 발급하면:
+	- 불필요한 서버 작업을 하게됨
+### 해결 :
+> middleware에서 세션만료시간을 체크 & `REFRESH_THRESHHOLD`에 맞춰 쿠키를 새로 구움
+#### 🔑 1. auth.ts - NextAuth 설정
+```ts
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  providers: [
+    Google({
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",  // 👈 중요!
+          response_type: "code",
+        },
+      },
+    }),
+  ],
+});
+```
+- `access_type: "offline"` 역할
+	- Google OAuth에서 **Refresh Token**을 받기 위한 설정
+	- 이게 없으면 access_token만 받아와서 세션 만료시 재로그인 필요
+	- `offline`으로 설정하면 토큰 갱신 가능
+#### 🛡️ 2. middleware.ts - 핵심 로직
+- 기존 token 정보를 **재인코딩**해서 만료 시간을 연장
+	- `encode()`함수가 새로운 jwt를 생성
+	- 이걸 쿠키로 다시 구워서 브라우저에 전달
+1) 토큰 가져오기 -> 로그인 체크 -> 만료 시간 체크
+```ts
+const token = await getToken({ req, secret: SECRET });
+
+if (!token && NEED_COOKIES.includes(pathname)) 
+  return NextResponse.next();
+
+if (!token)
+  return NextResponse.redirect(
+    new URL(`/sign?redirectTo=${pathname}`, req.url)
+  );
+
+const REFRESH_THRESHOLD = 10 * 60 * 1000; // 10분
+const exp = token.exp ? token.exp * 1000 : 0;
+
+// 만료 임박 : 10분 이내로 접근했을 경우에만 갱신 → 쿠키 새로 구움
+if (exp - Date.now() < MAX_AGE * 1000 - REFRESH_THRESHOLD) {
+  const newToken = await encode({ ... });
+  res.cookies.set({ ... });
+}
+```
+
+2) 쿠키 새로 굽기
+```ts
+const res = NextResponse.next();
+const newToken = await encode({
+  token,              // 기존 토큰 정보 유지
+  secret: SECRET,
+  salt: SALT,
+  maxAge: MAX_AGE,    // 만료 시간 재설정
+});
+
+// 쿠키굽기
+res.cookies.set({
+  name: SALT,      
+  value: newToken, // new encoded token
+  maxAge: MAX_AGE, // 'undefined'면 브라우저 닫을때까지 유지 - e.g. 주차비 정산앱
+  httpOnly: true,  // XSS방어 - JavaScript로 접근 불가
+  secure: process.env.NODE_ENV === "production", // HTTPS만
+  sameSite: "lax", // CSRF 방어
+  path: "/",
+});
+```
+
+
+📊 실제 동작 타임라인
+```text
+1월 1일 00:00 - 로그인
+├─ 쿠키 생성: 만료 1월 31일 00:00
+│
+1월 5일 10:00 - 페이지 접속
+├─ Middleware 실행
+├─ 남은 시간: 25일 14시간
+├─ 조건 체크: 25일 < (30일 - 10분)? YES
+├─ ✅ 쿠키 새로 구움
+└─ 새 만료: 2월 4일 10:00
+│
+1월 10일 15:00 - 또 접속
+├─ Middleware 실행
+├─ 남은 시간: 24일 19시간
+├─ ✅ 쿠키 새로 구움
+└─ 새 만료: 2월 9일 15:00
+```
+
+
 
 ---
 
@@ -69,14 +176,7 @@ updated: 2025-10-14T17:02
 ### validator
 
 ---
-# 의문갖기
-
-- 
-
----
-
 # 참고
 
 - https://oauth.net/2/
 - 
-
