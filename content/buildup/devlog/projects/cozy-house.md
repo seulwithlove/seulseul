@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:39
-updated: 2025-10-14T17:02
+updated: 2025-10-18T14:46
 ---
 #devlog #project  #AI #application #python #fastapi #websocket #flutter 
 
@@ -17,7 +17,7 @@ updated: 2025-10-14T17:02
 ---
 <div align="center">
     <img src="https://github.com/thetjswo/PJ_AIFFELthon/assets/140625136/3ad09459-7a9c-4c47-9f99-2834089aaf70" alt="Logo" width="200" height="200">
-  </a>
+  </div>
 ## 프로젝트 소개 
 
 > **포근한 집 Cozy House** 는 **1인 가구 대상 범죄를 예방하는 지능형 CCTV 앱**
