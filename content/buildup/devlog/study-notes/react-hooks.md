@@ -1,16 +1,11 @@
 ---
 created: 2025-10-11T23:14
-updated: 2025-10-14T17:03
+updated: 2025-11-14T16:52
 ---
 #devlog #study  #react #hooks
 # React hooks 📝
 
-- 새싹 풀스택 과정
-	- 강의 듣고 정리
-	- *LLM 활용 내용 보충*
 ---
-
-
 ## 성능 최적화 hooks
 
 ### `useDefferedValue` ✨
@@ -79,6 +74,7 @@ function TitleUpdater(){
 	👉 공부 포인트: 언제 사용하는지 확실히 정리해두기
 	- Modal, Input, Scroll
 
+---
 
 ## 상태관리 관련 hooks
 
@@ -90,10 +86,23 @@ function TitleUpdater(){
 	👉 공부 포인트: throttle/debounce 같은 개념과 차이도 알아두기
 
 
-### `useReducer`
-- 중앙 상태 관리
-	👉 공부 포인트: Todo App을 **useReducer + Context API**만으로 구현해보기
-	- [🔗 project : React Todo App](https://github.com/seulwithlove/react-todo) 
+
+
+### `useSession`
+- 클라이언트 컴포넌트에서 현재 로그인 상태를 가져오는 훅
+- return `{data: session, status}`
+	- `session` : 로그인된 사용자 정보(없으면 null)
+	- `status` : `"loading" | "authenticated" | "unauthenticated"`
+=> 로그인 버튼, 프로필 표시, 로그아웃 버튼 같은 UI에서는 **쿠키를 직접 다루지 않고, 세션 상태만 확인하면 됨**
+
+> `SessionProvider`는 session을 리액트 state로 전역에 제공함, `useSession`은 개별 컴포넌트에서 그 상태(현재 로그인 정보, 사용자 정보)를 읽어올수 있게 함 -> 개발자는 쿠키를 직접 다루지 않고 인증 상태를 관리할수 있게 됨
+
+## SessionProvider
+> 리액트의 Context Provider(API) 와 같은 역할
+- 앱의 최상위(`layout.tsx` or `_app.tsx`)에 넣어서 **모든 컴포넌트에서 세션 정보를 쓸수 있게 함**
+	- e.g.`useSession()` 
+- 쿠키에 저장된 session을 읽어와서 리액트 state로 관리
+
 
 
 ### `useActionState` ✨✨✨
@@ -103,10 +112,17 @@ function TitleUpdater(){
 	👉 공부 포인트: 서버 액션(Form) + optimistic UI + `useActionState` 조합
 	- form 처리 흐름
 
+
 ### `useFormStatus`
 - button이 속해있는 form 상태를 읽음
 	- `isPending` 상태를 쉽게 확인 가능
 	👉 공부 포인트: 여러 버튼이 있는 Form에서 버튼별 상태 어떻게 다뤄지는지
+
+
+### `useReducer`
+- 중앙 상태 관리
+	👉 공부 포인트: Todo App을 **useReducer + Context API**만으로 구현해보기
+	- [🔗 project : React Todo App](https://github.com/seulwithlove/react-todo) 
 
 
 ### `context API` ✨✨✨

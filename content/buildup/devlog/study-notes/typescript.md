@@ -1,12 +1,11 @@
 ---
 created: 2025-10-17T21:40
-updated: 2025-10-18T13:53
+updated: 2025-10-18T14:48
 ---
-#devlog #study  #typescript #{{category}}
+#devlog #study  #typescript #zod #validator
 
 # TypeScript 📝
 
-- [{{source}}](https://claude.ai/chat/%7B%7Blink%7D%7D)
 - 새싹 풀스택 과정
 	- 강의 듣고 정리
 	- *LLM 활용 내용 보충*

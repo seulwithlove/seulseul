@@ -1,14 +1,14 @@
 ---
 created: 2025-10-14T16:04
-updated: 2025-10-14T17:02
+updated: 2025-11-14T16:54
 ---
 #devlog #study  #project #nextjs #react #application 
 
 # Social Bookmark Application
 > Next.js(App Router), Prisma 기반 **풀스택 개발** 학습
 
-- 청년취업사관학교 SeSAC 프로젝트 1
-	- 2025. 8 ~ 2025. 10(진행중)
+- 청년취업사관학교 SeSAC 클론코딩 프로젝트
+	- 2025. 8 ~ 2025. 11(진행중)
 ## 소셜 북마크 관리 플랫폼
 - 사용자들이 북마크를 생성·공유, 다른 사용자의 북마크를 팔로우할 수 있는 웹 애플리케이션
 - 취향에 맞는 정보를 손쉽게 찾고 공유하며 소통 가능

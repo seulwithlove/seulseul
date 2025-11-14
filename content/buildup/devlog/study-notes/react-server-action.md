@@ -1,24 +1,39 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-10-14T17:03
+updated: 2025-11-14T16:53
 ---
 #devlog #study  #react #nextjs #server-action
 
 # Next.js Server Action  📝
 
-- 새싹 풀스택 과정 강의
-	- 강의 듣고 정리
-		- *LLM 활용 내용 보충*
-
-...업데이트중...
-
 ---
 
 # 내어보기
-- server action은 무조건 server에서 호출
+- 서버에서만 실행할 수 있는 동작을 브라우저에서 실행하는 것
+	- `"use server"` 추가하면 서버액션으로 실행됨
+		- 서버액션을 실행하는 API가 생성되어 브라우저에서 해당 서버액션을 실행하는 작업을 했을때 이 API를 호출하게 됨
+	- server action은 무조건 server에서 호출
+- 클라이언트 코드(예: 컴포넌트, 폼)에서 서버 코드를 직접 실행할 수 있게 해주는 기능
+	- The resulting Server Functions **can be passed to Client Components through props**.
+	- 별도의 API 라우트를 정의할 필요 없이 클라이언트와 서버 간의 데이터 통신을 간소화
 - Because the underlying network calls are always **asynchronous**, `'use server'` can only be used on **async functions**.
 	- `Promise`를 리턴하는 함수만 export 가능!
-- The resulting Server Functions **can be passed to Client Components through props**.
+- 간결하고 간단하고 편하고 안전하게 서버에서 실행하는 코드를 만들수 있음!
+	- 서버에서만 실행되는 코드이기때문에 브라우저에서는 호출만 가능
+		-  => 보안상 문제가 되는 코드를 다루기 좋음
+
+- HTML `<form>`
+	- `action` 속성에 서버 액션 함수를 지정하면, 폼 제출 시 입력된 데이터가 자동으로 `formData` 객체로 구성됨
+	- 해당 서버 액션 함수의 첫 번째 매개변수로 전달
+	- 이 객체에서 `get` 메서드로 필요한 값을 추출
+- `revalidatePath(path)`
+	- 이 옵션으로 서버액션으로 얻은 데이터를 바로 화면에 렌더링 할수 있음
+	- 서버 컴포넌트에서만 호출 가능
+	- 해당 경로의 cache된 데이터, full-route-cache는 무효화됨
+		- 데이터가 삭제되고 다시 생성되지는 않음
+		- 1)새로고침 후 2)다시 해당 페이지에 접속하면 dynamic page처럼 새로운 데이터를 렌더링하고, 해당 페이지를 full-route-cache로 등록
+- `useActionState`
+	- 클라이언트 컴포넌트에서 Server Action을 사용할 때, 폼 제출 상태(로딩 중 여부 등)를 관리하고 중복 제출을 방지하기 위해 권장되는 React 훅
 
 ---
 # 의문갖기
@@ -101,25 +116,3 @@ onClick={async () => {
 | **부작용(side effect)만 있는 액션** | 로그 기록, 통계 저장                       | ❌ 선택적         | 결과값이 중요하지 않고 실행만 보장되면 됨. 단, 실행 완료 확인하려면 `await` 필요 |
 | **후속 로직이 있는 액션**            | 로그인 후 `toast("성공")` 띄우기            | ✅ 필요          | 액션이 끝난 뒤에만 실행돼야 하므로 `await` 필요                     |
 | **에러 핸들링이 필요한 경우**          | try/catch로 잡아서 처리                  | ✅ 필요          | `await`이 없으면 에러가 Promise에 묶여서 catch되지 않음           |
-
-
-## react에서 `use client`를 붙이지 않으면 RSC라고 했는데 왜 `use server`를 붙여야 server action이 되지?
-
----
-
-## 참고하기
-
-- [next.js docs](https://nextjs.org/docs/app/guides/forms)
-- [react docs](https://react.dev/reference/rsc/use-server)
-
----
-
-## 찾아보기
-{{additional-notes}}
-
-## 액션아이템
-
-- [ ] {{action1}}
-- [ ] {{action2}}
-- [ ] {{action3}}
-

@@ -1,14 +1,11 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-10-14T17:03
+updated: 2025-11-14T16:52
 ---
 #devlog #study  #react #lifecycle
 
 # React lifecycle  📝
 
-- 새싹 풀스택 과정
-	- 강의 듣고 정리
-	- *LLM 활용 내용 보충*
 ---
 
 - mount : when the component is first  created and rendered into the DOM

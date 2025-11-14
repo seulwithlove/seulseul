@@ -1,6 +1,6 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-10-14T17:02
+updated: 2025-11-14T16:52
 ---
 #devlog #study  #nextjs #react #app-router #fullstack
 
@@ -10,8 +10,6 @@ updated: 2025-10-14T17:02
 - 새싹 풀스택 과정
 	- 강의 듣고 정리
 	- *LLM 활용 내용 보충*
-
-*...업데이트중...*
 
 ---
 
@@ -91,6 +89,10 @@ export default function Page() {
 		- 여기에서 리턴하는 객체의 값은 "string"만 가능함
 	- page-router의 `getStaticPath`와 동일한 기능
 
+
+- hidden input tag에는 `readOnly` attribute tag를 설정해줘야함
+
+- `div` or `form` 태그로 버튼 기능을 만들고 싶으면 -> `useRef`사용!
 ## streaming
 - 큰 데이터를 잘게 쪼개서 연속적으로 보내는 기술
 - 모든 데이터를 전달받지 않은 상태에서 화면을 끊김없이 볼수 있음
@@ -108,37 +110,11 @@ export default function Page() {
 
 ### Component streaming
 - `Suspense` 활용
-
-
 - Skeleton UI : 뼈대만 보여주는 UI
   
 
-## Server Actions ✨✨✨
-- 서버에서만 실행할 수 있는 동작을 브라우저에서 실행하는 것
-	- `"use server"` 추가하면 서버액션으로 실행됨
-		- 서버액션을 실행하는 API가 생성되어 브라우저에서 해당 서버액션을 실행하는 작업을 했을때 이 API를 호출하게 됨
-- 클라이언트 코드(예: 컴포넌트, 폼)에서 서버 코드를 직접 실행할 수 있게 해주는 기능
-	- 별도의 API 라우트를 정의할 필요 없이 클라이언트와 서버 간의 데이터 통신을 간소화
-- 서버에서만 실행되는 코드이기때문에 브라우저에서는 호출만 가능
-	-  => 보안상 문제가 되는 코드를 다루기 좋음
-- 간결하고 간단하고 편하고 안전하게 서버에서 실행하는 코드를 만들수 있음!
-- HTML `<form>`
-	- `action` 속성에 서버 액션 함수를 지정하면, 폼 제출 시 입력된 데이터가 자동으로 `formData` 객체로 구성됨
-	- 해당 서버 액션 함수의 첫 번째 매개변수로 전달
-	- 이 객체에서 `get` 메서드로 필요한 값을 추출
-- `revalidatePath(path)`
-	- 이 옵션으로 서버액션으로 얻은 데이터를 바로 화면에 렌더링 할수 있음
-	- 서버 컴포넌트에서만 호출 가능
-	- 해당 경로의 cache된 데이터, full-route-cache는 무효화됨
-		- 데이터가 삭제되고 다시 생성되지는 않음
-		- 1)새로고침 후 2)다시 해당 페이지에 접속하면 dynamic page처럼 새로운 데이터를 렌더링하고, 해당 페이지를 full-route-cache로 등록
-- `useActionState`
-	- 클라이언트 컴포넌트에서 Server Action을 사용할 때, 폼 제출 상태(로딩 중 여부 등)를 관리하고 중복 제출을 방지하기 위해 권장되는 React 훅
+## [[react-server-action|Server Actions ]]✨✨✨
 
-
-- hidden input tag에는 `readOnly` attribute tag를 설정해줘야함
-
-- `div` or `form` 태그로 버튼 기능을 만들고 싶으면 -> `useRef`사용!
 
 ## Parallel route & Intercepting route
 - @ : slot
@@ -154,47 +130,10 @@ export default function Page() {
 ## [[nextauth|Auth.js]]
 
 
-## SessionProvider
-> 리액트의 Context Provider(API) 와 같은 역할
-- 앱의 최상위(`layout.tsx` or `_app.tsx`)에 넣어서 **모든 컴포넌트에서 세션 정보를 쓸수 있게 함**
-	- e.g.`useSession()` 
-- 쿠키에 저장된 session을 읽어와서 리액트 state로 관리
 
 
-### `useSession`
-- 클라이언트 컴포넌트에서 현재 로그인 상태를 가져오는 훅
-- return `{data: session, status}`
-	- `session` : 로그인된 사용자 정보(없으면 null)
-	- `status` : `"loading" | "authenticated" | "unauthenticated"`
-=> 로그인 버튼, 프로필 표시, 로그아웃 버튼 같은 UI에서는 **쿠키를 직접 다루지 않고, 세션 상태만 확인하면 됨**
 
-> `SessionProvider`는 session을 리액트 state로 전역에 제공함, `useSession`은 개별 컴포넌트에서 그 상태(현재 로그인 정보, 사용자 정보)를 읽어올수 있게 함 -> 개발자는 쿠키를 직접 다루지 않고 인증 상태를 관리할수 있게 됨
-
-
-## Runtime 
-### Node.js
-- 서버에서 JS를 실행할 수 있게 함
-- `server action` 실행, API Routes(`app/api/*/route.ts`)
-- DB연결, 무거운 서버 로직(파일 읽기/쓰기)
-
-### Edge Runtime
-- 가벼운 서버 실행환경 (e.g. Vercel)
-- Node 보다 제한적이지만, 전 세계 CDN에 가까운 위치(edge)에서 실행돼서 응답이 빠름
-- `middleware.ts` 실행
-	- 요청(Request)이 들어올때 가장 먼저 실행되서 빠르게 Redirect, 인증체크 등을 할수 있음
-- 일부 Route handler(`export const runtime = 'edge'`)
-- `fetch`, Web API 스타일의 API 호출
-- 제한사항
-	- 파일 시스템 접근 X
-	- 특정 Node.js API (`fs`, `net`, `child_process`) X
-
-#### Middleware
-- 클라이언트 Request - Server Response 사이에서 동작하는 코드
-- Next.js에서 페이지 렌더링 전에 실행되면서 요청을 가로채서 조건에 따라 리다이렉트, 응답 수정 등을 함
-- 특징
-	- 항상 Edge에서 실행
-	- page/route 들어가기 전에 실행
-	- 인증체크, i18n(언어 라우팅), A/B 테스트 등에 자주 사용
+## [[nextjs-runtime|Runtime]] 
 
 
 

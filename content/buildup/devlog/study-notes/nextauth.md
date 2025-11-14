@@ -1,12 +1,11 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-10-18T14:44
+updated: 2025-11-14T16:53
 ---
 #devlog #study  #nextauth #oauth2 #server #jwt
 
 # Auth.js  📝
 
-- 새싹 풀스택 과정 강의
 - [Auth.js - Docs](https://authjs.dev/getting-started) 
 	- *LLM 활용 내용 보충*
 
