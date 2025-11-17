@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:08
-updated: 2025-11-14T16:49
+updated: 2025-11-17T12:41
 ---
 #devlog #project  #nextjs  #react-native #application 
 
@@ -31,7 +31,7 @@ updated: 2025-11-14T16:49
 
 ---
 ## Troubleshooting
-- [[Text parsing]]
+- [[pdf-text-parsing|pdf text parsing]]
 
 ---
 ## 회고

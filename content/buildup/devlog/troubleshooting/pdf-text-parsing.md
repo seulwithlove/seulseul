@@ -1,10 +1,12 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-14T16:50
+updated: 2025-11-17T12:42
 ---
 #devlog #study #trouble-shooting #pdf #text-parse #nextjs 
 
-# text parsing
+# PDF Text parsing
+
+> 진행중...
 ## 문제상황
 - \<kniitter> 프로젝트에 필요한 pdf 도안 텍스트 파싱 과정에서 파싱된 텍스트가 순서대로(pdf상에서 위→아래 방향) 추출되지 않음
 
