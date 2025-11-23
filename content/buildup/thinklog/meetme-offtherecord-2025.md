@@ -1,8 +1,8 @@
 ---
 created: 2025-11-23T16:38:00
-updated: 2025-11-23T22:25
+updated: 2025-11-23T22:26
 ---
-#thinklog #meetme #off-the-record #exhibition #writing 
+#thinklog #meetme #off-the-record #exhibition #writing #ritual
 
 # meet me - <2025 OFF THE RECORD> 전시 회고
 - [meet me 밑미 오프더레코드 전시](https://www.nicetomeetme.kr/products/01k8zhbp3x1nxaentk67aqn3m5)
