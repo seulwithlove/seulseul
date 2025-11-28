@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:08
-updated: 2025-11-17T12:41
+updated: 2025-11-28T12:27
 ---
 #devlog #project  #nextjs  #react-native #application 
 
@@ -44,7 +44,7 @@ updated: 2025-11-17T12:41
 ### KPT 🟢🔸🔷
 #### Keep 🟢
 - 기간내에 구현해야할 기능을 정리하고 차례대로 구현함
--  서버/클라이언트 컴포넌트를 분리해서 최대한 페이지 전체의 Client Side Rendering을 방지하려고 고민해봄
+- 서버/클라이언트 컴포넌트를 분리해서 최대한 페이지 전체의 Client Side Rendering을 방지하려고 고민해봄
 
 ### Problem 🔸
 - 개발계획을 너무 여유있게 잡고 늦게 시작

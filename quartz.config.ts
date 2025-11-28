@@ -13,9 +13,10 @@ const config: QuartzConfig = {
 		enableSPA: true,
 		enablePopovers: true,
 		analytics: {
-			provider: "plausible",
+			provider: "google",
+			tagId: "G-JCPJE428HJ",
 		},
-		locale: "en-US",
+		locale: "ko-KR",
 		baseUrl: "seulwithlove.github.io/seulseul",
 		ignorePatterns: ["private", "templates", ".obsidian"],
 		defaultDateType: "modified",

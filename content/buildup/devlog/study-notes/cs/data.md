@@ -1,12 +1,11 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-21T15:29
+updated: 2025-11-27T17:12
 ---
 #devlog #study  #cs #data
 
-# data
+# 데이터 data
 
-- [혼자 공부하는 컴퓨터 구조+운영체제](https://product.kyobobook.co.kr/detail/S000061584886?gt_network=g&gt_keyword=&gt_target_id=dsa-1974044871038&gt_campaign_id=9979905549&gt_adgroup_id=132556570510) 2장
 
 ---
 
