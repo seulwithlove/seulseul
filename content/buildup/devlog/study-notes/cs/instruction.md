@@ -1,7 +1,9 @@
 ---
 created: 2025-11-27T17:11
-updated: 2025-11-28T17:54
+updated: 2025-11-29T20:16
 ---
+#devlog #study #cs 
+
 # 명령어 Instruction
 
 ---

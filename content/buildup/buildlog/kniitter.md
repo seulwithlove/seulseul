@@ -1,7 +1,8 @@
 ---
 created: 2025-11-27T18:00
-updated: 2025-11-28T12:00
+updated: 2025-11-29T20:15
 ---
+#buildlog #startup #application 
 # Kniitter 니이터 
 > 서술형 뜨개 도안 리더/뷰어
 

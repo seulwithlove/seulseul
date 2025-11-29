@@ -1,8 +1,8 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-27T17:12
+updated: 2025-11-29T20:16
 ---
-#devlog #study  #computer-archtecture
+#devlog #study #cs  #computer-archtecture
 
 # 컴퓨터 구조
 

@@ -1,6 +1,6 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-11-14T16:52
+updated: 2025-11-29T20:22
 ---
 #devlog #study  #nextjs #react #app-router #fullstack
 
@@ -113,7 +113,7 @@ export default function Page() {
 - Skeleton UI : 뼈대만 보여주는 UI
   
 
-## [[react-server-action|Server Actions ]]✨✨✨
+## [[nextjs-server-action|Server Actions ]]✨✨✨
 
 
 ## Parallel route & Intercepting route
@@ -127,7 +127,7 @@ export default function Page() {
 ## ComponentProps
 - 특정 컴포넌트의 prop들을 키로 받아서 그 자체를 사용?
 
-## [[nextauth|Auth.js]]
+## [[auth-js|Auth.js]]
 
 
 

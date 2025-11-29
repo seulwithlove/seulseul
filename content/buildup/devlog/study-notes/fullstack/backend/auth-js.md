@@ -1,8 +1,8 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-11-14T16:53
+updated: 2025-11-29T20:23
 ---
-#devlog #study  #nextauth #oauth2 #server #jwt
+#devlog #study #backend #nextauth #oauth2 #server #jwt
 
 # Auth.js  📝
 

@@ -1,8 +1,8 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-27T17:11
+updated: 2025-11-29T20:16
 ---
-#devlog #study  #CS #hongong
+#devlog #study  #cs #hongong
 
 # Computer Science
 
