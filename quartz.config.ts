@@ -16,9 +16,9 @@ const config: QuartzConfig = {
 			provider: "google",
 			tagId: "G-JCPJE428HJ",
 		},
-		locale: "ko-KR",
+		locale: "en-GB",
 		baseUrl: "seulwithlove.github.io/seulseul",
-		ignorePatterns: ["private", "templates", ".obsidian"],
+		ignorePatterns: ["private", "templates", ".obsidian", "excalidraw"],
 		defaultDateType: "modified",
 		theme: {
 			fontOrigin: "local",
