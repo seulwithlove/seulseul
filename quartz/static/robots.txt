@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seulwithlove.github.io/seulseul/sitemap.xml
