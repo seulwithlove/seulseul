@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-14T16:53
+updated: 2025-12-01T22:18
 ---
 #devlog #study  #nextjs #runtime #backend 
 
@@ -17,7 +17,7 @@ updated: 2025-11-14T16:53
 
 ## Edge Runtime
 - 가벼운 서버 실행환경 (e.g. Vercel)
-- Node 보다 제한적이지만, 전 세계 CDN에 가까운 위치(edge)에서 실행돼서 응답이 빠름
+- Node 보다 제한적이지만, 전 세계 [CDN](https://developer.mozilla.org/en-US/docs/Glossary/CDN)에 가까운 위치(edge)에서 실행돼서 응답이 빠름
 - `middleware.ts` 실행
 	- 요청(Request)이 들어올때 가장 먼저 실행되서 빠르게 Redirect, 인증체크 등을 할수 있음
 - 일부 Route handler(`export const runtime = 'edge'`)

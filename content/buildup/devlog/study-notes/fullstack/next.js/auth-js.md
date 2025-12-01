@@ -1,6 +1,6 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-11-29T20:23
+updated: 2025-12-01T22:14
 ---
 #devlog #study #backend #nextauth #oauth2 #server #jwt
 
@@ -159,8 +159,8 @@ res.cookies.set({
 - 브라우저 쿠키에 JWT를 넣어줌
 - 다음 요청에서 서버는 JWT만 검증 → DB 조회 불필요
 
-> **Access Token** = Provider(구글/깃허브)와 통신용
-> **JWT/세션** = 우리 앱 내부에서 사용자 인증을 관리하기 위한 도구
+> - **Access Token** = Provider(구글/깃허브)와 통신용
+> - **JWT/세션** = 우리 앱 내부에서 사용자 인증을 관리하기 위한 도구
 
 
 ### 브라우저에 데이터 저장하는 방법
@@ -178,4 +178,3 @@ res.cookies.set({
 # 참고
 
 - https://oauth.net/2/
-- 

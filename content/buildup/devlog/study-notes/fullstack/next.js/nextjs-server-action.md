@@ -1,6 +1,6 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-11-14T16:53
+updated: 2025-12-01T22:20
 ---
 #devlog #study  #react #nextjs #server-action
 
@@ -9,10 +9,11 @@ updated: 2025-11-14T16:53
 ---
 
 # 내어보기
-- 서버에서만 실행할 수 있는 동작을 브라우저에서 실행하는 것
+- 클라이언트(Browser나 Server Component)에서 호출할 수 있는, 서버에서 실행되는 함수
+	- 서버에서만 실행할 수 있는 동작을 브라우저에서 실행하는 것
 	- `"use server"` 추가하면 서버액션으로 실행됨
 		- 서버액션을 실행하는 API가 생성되어 브라우저에서 해당 서버액션을 실행하는 작업을 했을때 이 API를 호출하게 됨
-	- server action은 무조건 server에서 호출
+		- server action은 무조건 server에서 호출
 - 클라이언트 코드(예: 컴포넌트, 폼)에서 서버 코드를 직접 실행할 수 있게 해주는 기능
 	- The resulting Server Functions **can be passed to Client Components through props**.
 	- 별도의 API 라우트를 정의할 필요 없이 클라이언트와 서버 간의 데이터 통신을 간소화
