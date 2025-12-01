@@ -1,16 +1,10 @@
 ---
 created: 2025-10-10T18:11
-updated: 2025-10-17T21:42
+updated: 2025-11-29T21:45
 ---
 #devlog #study #react #hooks 
 
 # React 📝
-
-- [한 입 크기로 잘라먹는 리액트](https://reactjs.winterlood.com/)
-- 새싹 풀스택 과정
-	- 강의 듣고 정리
-	- *LLM 활용 내용 보충*
-
 
 ---
 

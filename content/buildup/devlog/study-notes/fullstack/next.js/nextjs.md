@@ -1,15 +1,10 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-11-29T20:22
+updated: 2025-12-01T22:11
 ---
 #devlog #study  #nextjs #react #app-router #fullstack
 
 # Next.js  📝
-
-- 한 입 크기로 잘라먹는 Next.js(v15)
-- 새싹 풀스택 과정
-	- 강의 듣고 정리
-	- *LLM 활용 내용 보충*
 
 ---
 
@@ -122,7 +117,7 @@ export default function Page() {
 	- 인터셉팅할 페이지를 갖고 있는 폴더
 - intercepting route는 **CSR방식으로 페이지를 이동하는 경우**(navigation or )일때만 가능
 	- modal 페이지로 띄움
-- 특정 페이지를 intercept해서 Modal로 띄우고 배경은 parallel route를 활용해 기존의 페이지를 띄우면 자연스러운 UI를 만들수 있음
+- <span style="background:#fdbfff">특정 페이지를 intercept해서 Modal로 띄우고 배경은 parallel route를 활용해 기존의 페이지를 띄우면 자연스러운 UI를 만들수 있음</span>
 
 ## ComponentProps
 - 특정 컴포넌트의 prop들을 키로 받아서 그 자체를 사용?
