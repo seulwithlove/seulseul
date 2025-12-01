@@ -1,6 +1,6 @@
 ---
 created: 2025-10-10T18:08
-updated: 2025-12-01T22:11
+updated: 2025-12-01T22:22
 ---
 #devlog #study  #nextjs #react #app-router #fullstack
 
@@ -117,9 +117,9 @@ export default function Page() {
 	- 인터셉팅할 페이지를 갖고 있는 폴더
 - intercepting route는 **CSR방식으로 페이지를 이동하는 경우**(navigation or )일때만 가능
 	- modal 페이지로 띄움
-- <span style="background:#fdbfff">특정 페이지를 intercept해서 Modal로 띄우고 배경은 parallel route를 활용해 기존의 페이지를 띄우면 자연스러운 UI를 만들수 있음</span>
+- <u>특정 페이지를 intercept해서 Modal로 띄우고 배경은 parallel route를 활용해 기존의 페이지를 띄우면 자연스러운 UI를 만들수 있음</u>
 
-## ComponentProps
+## Component Props
 - 특정 컴포넌트의 prop들을 키로 받아서 그 자체를 사용?
 
 ## [[auth-js|Auth.js]]
