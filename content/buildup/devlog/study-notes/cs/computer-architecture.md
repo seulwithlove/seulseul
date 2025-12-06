@@ -1,12 +1,12 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-29T20:16
+updated: 2025-12-06T11:00
 ---
 #devlog #study #cs  #computer-archtecture
 
 # 컴퓨터 구조
-
-
+- [혼자 공부하는 컴퓨터 구조+운영체제-강민철](https://product.kyobobook.co.kr/detail/S000061584886?gt_network=g&gt_keyword=&gt_target_id=dsa-1974044871038&gt_campaign_id=9979905549&gt_adgroup_id=132556570510)
+	- *첨부 이미지 출처 : 책*
 ---
 
 # 내어보기
@@ -58,7 +58,7 @@ updated: 2025-11-29T20:16
 -  컴퓨터 내부의 핵심 부품 4개를 연결하는 통로
 - 주소버스 address bus
 - 데이터 버스 data bus
-- 제어 버스 control bus : 제어장치가 제어신호를 보내는 통로
+- 제어 버스 control bus : 제어장치가 제어신호를 보내는 통로![[Screenshot 2025-12-06 at 10.58.47.png]]
 
 ---
 # 의문갖기
