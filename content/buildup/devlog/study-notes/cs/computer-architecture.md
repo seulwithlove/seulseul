@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-12-06T11:00
+updated: 2025-12-06T11:33
 ---
 #devlog #study #cs  #computer-archtecture
 
@@ -25,18 +25,18 @@ updated: 2025-12-06T11:00
 ### 2. 컴퓨터의 네 가지 핵심 부품
 
 #### 1) 중앙처리장치 CPU ; Central Processing Unit
-- ALU;Arithmetic Logic Unit 산술논리연산장치
+- ALU ; Arithmetic Logic Unit 산술논리연산장치
 	- 계산기
 - register 레지스터
-	- CPU 내부의 임시 저장장치
+	- CPU 내부의 **임시 저장**장치
 		- 프로그램 실행에 필요한 값을 임시로 저장
 	- 여러 종류가 있음
 
-- CU;Control Unit 제어장치
-	- 제어신호 control signal를 내보내고 
+- CU ; Control Unit 제어장치
+	- **제어신호 control signal를 내보내고** 
 		- 저장된 데이터(값)를 읽고싶으면 : 메모리 읽기
 		- 값을 저장하고 싶으면 : 메모리 쓰기
-	- 명령어를 해석
+	- **명령어를 해석**
 #### 2) 주기억장치 main memory
 - RAM(Random Access Memory) 👈 이걸 "메모리" 라고 부름
 	- 프로그램이 실행되려면 반드시 메모리에 저장되어있어야함
@@ -55,16 +55,18 @@ updated: 2025-12-06T11:00
 ![[Pasted image 20251117215449.png]]
 
 #### 시스템 버스 system bus
--  컴퓨터 내부의 핵심 부품 4개를 연결하는 통로
+- 컴퓨터 내부의 핵심 부품 4개를 연결하는 통로![[Screenshot 2025-12-06 at 10.58.47.png]]
 - 주소버스 address bus
+	- 단방향
 - 데이터 버스 data bus
-- 제어 버스 control bus : 제어장치가 제어신호를 보내는 통로![[Screenshot 2025-12-06 at 10.58.47.png]]
+	- 양방향 : 읽고 쓰기 가능
+- 제어 버스 control bus : 제어장치가 제어신호를 보내는 통로
+	- 양방향 : 읽고 쓰기 가능
 
 ---
 # 의문갖기
+- 데이터 주소가 변경되면 데이터 흐름은 어떻게 될까?
 
-- {{question1}}
-- {{question2}}
 
 ---
 

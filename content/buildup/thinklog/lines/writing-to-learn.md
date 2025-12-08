@@ -1,13 +1,13 @@
 ---
 created: 2025-10-11T23:14
-updated: 2025-10-14T17:03
+updated: 2025-12-08T14:00
 ---
 #thinklog #lines #book #writing
 
 # [공부가 되는 글쓰기 _ 쓰기는 배움의 도구다](https://product.kyobobook.co.kr/detail/S000001863155)
 - 윌리엄 진서 지음
 - 서대경 옮김
-- 유유
+- 출판사 유유
 
 ---
 ## 밑줄

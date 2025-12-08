@@ -1,11 +1,13 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-11-27T17:12
+updated: 2025-12-06T11:51
 ---
 #devlog #study  #cs #data
 
 # 데이터 data
-
+- [혼자 공부하는 컴퓨터 구조+운영체제-강민철](https://product.kyobobook.co.kr/detail/S000061584886?gt_network=g&gt_keyword=&gt_target_id=dsa-1974044871038&gt_campaign_id=9979905549&gt_adgroup_id=132556570510)
+	- *첨부 이미지 출처 : 책*
+- 스터니 내용
 
 ---
 
@@ -25,9 +27,13 @@ updated: 2025-11-27T17:12
 - half word / full word / double word
 
 ## 진수
-- 이진수 : 0b
+- 2진수 : 0b
 	- 음수 표현방법 - 2의 보수 : 0, 1을 뒤집고 +1
 - 16진수: 0x
+	- 2진수와 변환이 간편해서 자주 사용 : $2^4=16$
+	- HEX code
+- 2진수 → 16진수 : 뒤에서 4자리씩 쪼개서 각 값을 16진수로 변환
+	- $1011 1101_{(2)}$ → 1011 1101 → $bd$
 
 ## 인코딩 방법 : 컴퓨터가 이해할 수 있는 문자 표현법 
 - 문자집합 character set : 컴퓨터가 인식하고 표현할 수 있는 문자 모음
@@ -47,23 +53,49 @@ updated: 2025-11-27T17:12
 	- 완성현 인코딩 & 조합형 인코딩
 - 조합형 인코딩 : <초성+중성+종성> 2바이트 코드 부여
 - 한글 한 글자에 2byte=16bit
-- 2,350개 한글 단어 표현 가능 but, 문자집합에 포함되지 않은 단어 있음
+- 2,350개 한글 단어 표현 가능 
+	- but, 문자집합에 포함되지 않은 단어 있음
+		- e.g. '뷁'
+
 ### 유니코드
+![[Screenshot 2025-12-06 at 11.47.12.png]]
 - 여러 나라 문자를 광범위하게 표현할수 있는 통일된 문자 집합
 - 인코딩 방식 : UTF-8, UTF-16, UTF-32
 ![[Screenshot 2025-11-21 at 15.29.14.png]]
+
+####  [endianness](https://developer.mozilla.org/en-US/docs/Glossary/Endianness
+- UTF-16의 문제를 해결하기 위해 등장한 개념
+	- 바이트를 2개를 씀
+		- 한글/영어 모두 2바이트로 처리
+- 어떤 순서대로 읽을것인가?
+- Big-endian 
+	- **Order**: The most significant byte (the "big end") comes first, followed by bytes of decreasing significance.
+	- **Analogy**: This is like how humans typically read and write numbers, from left to right 
+	- **Example**: A four-byte number would be stored in memory addresses as `12 34 56 78`.
+	- **Use case**: Many network protocols, such as TCP/IP, use big-endian, also known as network byte order. 
+- Little-endian
+	- **Order**: The least significant byte (the "little end") comes first, followed by bytes of increasing significance.
+	- **Analogy**: This is similar to how a postal address is written in some places, where the house number comes before the street and city.
+	- **Example**: A four-byte number would be stored in memory addresses as `78 56 34 12`.
+	- **Use case**: Most personal computers, like those using Intel x86 architecture, use little-endian.
+
+
 ---
 # 의문갖기
 
-- {{question1}}
-- {{question2}}
+- 보안에서의 인코딩 / 디코딩 은 `문자 인코딩/디코딩`과 다름!
+	- 보안에서의 개념은 오히려 `암호화 / 복구화`
+- 
 
 ---
 
 # 참고하기
 
-- {{reference1}}
-- {{reference2}}
+- UTF-8 한글은 3바이트 but, 이모티콘은 4바이트
+	- 만약 DB에서는 충돌!
+		- mySQL 4.0이하 버전에서 특히 자주!
+			- 바이트 값에 따라 DB를 분리함
+- 결합형 이모지 : byte가 결합함!
 
 ---
 

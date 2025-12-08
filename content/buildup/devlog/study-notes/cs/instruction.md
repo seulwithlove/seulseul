@@ -1,11 +1,12 @@
 ---
 created: 2025-11-27T17:11
-updated: 2025-12-04T19:29
+updated: 2025-12-06T11:01
 ---
 #devlog #study #cs 
 
 # 명령어 Instruction
 - [혼자 공부하는 컴퓨터 구조+운영체제-강민철](https://product.kyobobook.co.kr/detail/S000061584886?gt_network=g&gt_keyword=&gt_target_id=dsa-1974044871038&gt_campaign_id=9979905549&gt_adgroup_id=132556570510) 책 내용 정리
+	- *첨부 이미지 출처 : 책*
 - 풀스택 코드 흐름 적용(LLM 활용)
 ---
 
