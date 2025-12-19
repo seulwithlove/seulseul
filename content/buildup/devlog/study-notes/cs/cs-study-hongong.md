@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T16:38
-updated: 2025-12-08T21:24
+updated: 2025-12-11T18:44
 ---
 #devlog #study  #cs #hongong
 
@@ -18,7 +18,8 @@ updated: 2025-12-08T21:24
 - [[computer-architecture|1장 컴퓨터 구조]]
 - [[data|2장 데이터]]
 - [[instruction|3장 명령어]]
-- [[|4장 ]]
+- [[cpu-how-does-a-cpu-work|4장 CPU 작동원리]]
+- 
 
 ---
 # 의문갖기
