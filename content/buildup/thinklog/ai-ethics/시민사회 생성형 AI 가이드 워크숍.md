@@ -1,7 +1,8 @@
 ---
 created: 2025-12-18T15:58
-updated: 2025-12-19T14:16
+updated: 2025-12-19T14:43
 ---
+#thinklog #ai-ethics #seminar 
 # [시민사회 생성형 AI 가이드 워크숍](https://talks.campaigns.do/posts/92teZPj)
 - 주최: 디지털정의네트워크, 빠띠, 정보인권연구소, 참여연대
 - 2025.12.18 16:00-18:00 @참여연대 아름누리홀 
