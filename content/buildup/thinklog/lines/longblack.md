@@ -1,6 +1,6 @@
 ---
 created: 2025-12-08T13:58
-updated: 2025-12-22T13:22
+updated: 2025-12-22T16:27
 ---
 #thinklog #reading #longblack 
 
