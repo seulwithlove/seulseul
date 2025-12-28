@@ -1,19 +1,20 @@
 ---
 created: 2025-10-14T16:08
-updated: 2025-11-28T12:27
+updated: 2025-12-28T22:55
 ---
 #devlog #project  #nextjs  #react-native #application 
 
-# kniitter
+# [kniitter](https://kniitter.vercel.app/)
 > Next.js(App Router) + React Native 기반 **풀스택 프로젝트**
 - 청년취업사관학교 SeSAC 프로젝트
-	- 2025. 10. 12 ~ 11. 13 (1차)
 	- 수업내용 기반 바이브코딩(Cursor)
+- 2025. 10. 12 ~ 11. 13 (1차)
+- 2025. 12 ~ (2차 진행중)
 
-## 뜨개 도안 리더 어플리케이션
+## 뜨개 도안 리더 웹 어플리케이션
 - 서술형 뜨개 도안을 작업하기 편리한 형식으로 변환하는 도안 리더기
 
-[🔗 github repository ](https://github.com/seulwithlove/kniitter)
+[🔗 github repository ](https://github.com/seulwithlove/kniitter), [web page](https://kniitter.vercel.app/)
 ### 문제점
 - 기존 대바늘 뜨개 도안은 서술형 설명이 나열되어 있음
 - 뜨개인 친화적이지 않아 코수를 헷갈리기 쉽고, 도안을 읽는게 어려움
