@@ -18,7 +18,7 @@ const config: QuartzConfig = {
 		},
 		locale: "en-GB",
 		baseUrl: "seulwithlove.github.io/seulseul",
-		ignorePatterns: ["private", "templates", ".obsidian", "excalidraw/**"],
+		ignorePatterns: ["private", "templates", ".obsidian", "excalidraw/**", "temp"],
 		defaultDateType: "modified",
 		theme: {
 			fontOrigin: "local",
